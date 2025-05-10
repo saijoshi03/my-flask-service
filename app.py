@@ -1,4 +1,5 @@
 from flask import Flask, request
+import os
 
 app = Flask(__name__)
 
@@ -9,7 +10,6 @@ def home():
 @app.route('/add')
 def add_numbers():
     try:
-        # Get query parameters
         a = float(request.args.get('a', 0))
         b = float(request.args.get('b', 0))
         result = a + b
@@ -18,4 +18,5 @@ def add_numbers():
         return "Invalid input. Please provide numeric values for a and b."
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    port = int(os.environ.get("PORT", 10000))  # <- Use Render's PORT
+    app.run(host="0.0.0.0", port=port)
