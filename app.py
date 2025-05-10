@@ -1,29 +1,27 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello from Render!"
+    return render_template('index.html')
 
-@app.route('/add')
+@app.route('/add', methods=['GET', 'POST'])
 def add_numbers():
-    try:
-        # Get the 'a' and 'b' query parameters, defaulting to 0 if not provided
-        a = request.args.get('a', type=float, default=0)
-        b = request.args.get('b', type=float, default=0)
-
-        # Check if the inputs are valid numbers
-        if a is None or b is None:
-            return "Invalid input. Please provide valid numeric values for 'a' and 'b'.", 400
-        
-        result = a + b
-        return f"The sum of {a} and {b} is {result}"
-    except ValueError:
-        return "Invalid input. Please provide numeric values for 'a' and 'b'.", 400
+    if request.method == 'POST':
+        try:
+            # Get the values from the form inputs
+            a = float(request.form.get('a'))
+            b = float(request.form.get('b'))
+            
+            # Calculate the result
+            result = a + b
+            return render_template('index.html', result=f"The sum of {a} and {b} is {result}")
+        except ValueError:
+            return render_template('index.html', error="Invalid input. Please provide valid numeric values for 'a' and 'b'.")
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    # Get the port from the environment variable for Render
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port, debug=True)
