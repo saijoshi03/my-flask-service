@@ -20,6 +20,7 @@ If you type this into a form:
 ```html
 <script>alert('XSS')</script>
 
+****Why XSS is Dangerous****
 ##An attacker can:##
 
     Show fake login forms to steal passwords
