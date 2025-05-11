@@ -2,30 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Add Numbers</title>
+    <title>XSS Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+            color: #333;
+        }
+        h1 {
+            color: #d6336c;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 8px 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+        .output {
+            margin-top: 30px;
+            padding: 15px;
+            background: white;
+            border-left: 5px solid #d6336c;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter Two Numbers to Add</h1>
-    
-    <form action="/add" method="POST">
-        <label for="a">Number 1:</label>
-        <input type="text" id="a" name="a" required>
-        <br><br>
-        
-        <label for="b">Number 2:</label>
-        <input type="text" id="b" name="b" required>
-        <br><br>
-        
-        <button type="submit">Add Numbers</button>
+
+    <h1>XSS Attack Demo</h1>
+    <form method="GET" action="">
+        <label for="input">Enter your name (or a script):</label><br>
+        <input type="text" name="name" id="input">
+        <input type="submit" value="Submit">
     </form>
 
-    {% if result %}
-        <h2>{{ result }}</h2>
-    {% endif %}
-    
-    {% if error %}
-        <h2 style="color: red;">{{ error }}</h2>
-    {% endif %}
+    <div class="output">
+        <h2>Output:</h2>
+        <p>
+            Hello, 
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                document.write(params.get("name"));
+            </script>
+        </p>
+    </div>
+
 </body>
 </html>
