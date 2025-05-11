@@ -1,6 +1,6 @@
-==============================
+===
 📘 XSS DEMO WEBSITE 
-==============================
+===
 
 📝 Description:
 ---------------
@@ -72,6 +72,6 @@ OWASP XSS Guide: https://owasp.org/www-community/attacks/xss
 GitHub Pages Help: https://pages.github.com/  
 DOMPurify Library: https://github.com/cure53/DOMPurify  
 
-===============================
+===
 Made for Learning Only ✨
-===============================
+===
