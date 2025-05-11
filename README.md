@@ -1,67 +1,75 @@
-###
 XSS DEMO WEBSITE
-####
+================
 
 Description:
+------------
+This is a simple demo website using only HTML and CSS that demonstrates how a Cross-Site Scripting (XSS) vulnerability works. 
+It is meant for educational purposes to help learners understand basic web security risks.
+
+WARNING: This website is intentionally insecure. Do not use this code in real-world websites or production environments.
+
+Live Demo Link:
 ---------------
-This is a simple demo website using only HTML and CSS that shows how a Cross-Site Scripting (XSS) vulnerability works. It is meant for educational purposes to learn about web security.
-
-WARNING: This website is intentionally insecure. Do not use this code in real-world websites.
-
-LIVE DEMO LINK:
---------------------
 https://my-flask-service-sj38.onrender.com
 
- WHAT IS XSS?
-----------------
+
+What is XSS?
+------------
 XSS stands for Cross-Site Scripting.
 
-It is a type of attack where someone puts malicious code (usually JavaScript) into a website that is then shown to other users. This happens when a site does NOT clean or escape user input.
+It is a type of security vulnerability where attackers inject malicious code (usually JavaScript) into a website, 
+which is then executed by unsuspecting users' browsers. This typically occurs when a site fails to properly sanitize user input.
 
-Try this example:
-Type this into the input box on the page:
+Example:
+--------
+Try typing the following into the input box on the website:
+
 <script>alert('This is an XSS attack!')</script>
 
-If you see a popup message, it means the website is vulnerable to XSS.
+If a popup appears, that means the site is vulnerable to an XSS attack.
 
-WHY IS XSS DANGEROUS?
--------------------------
-- Steal passwords or session tokens
-- Redirect users to fake websites
-- Modify the content of the website
-- Show fake login forms
-- Spread worms through links
+Why is XSS Dangerous?
+---------------------
+- It can be used to steal passwords or session cookies
+- Attackers can redirect users to fake or malicious websites
+- It may alter website content or behavior
+- It can display fake login forms for phishing
+- It allows spreading malware or browser-based worms
 
-These attacks can cause serious damage, especially on login pages or admin panels.
+These threats can lead to serious consequences, especially on sites with login pages, sensitive data, or admin access.
 
-HOW TO PREVENT XSS (Mitigation Tips)
-----------------------------------------
-1. Escape HTML characters like < > " ' in user input before showing it
-2. Use frameworks (like React, Flask templates, etc.) that escape content by default
-3. Use input sanitization libraries like DOMPurify
-4. Add a Content Security Policy (CSP) header
-5. Never insert raw user input into HTML, JavaScript, or URLs
-
-PROJECT FILE STRUCTURE
---------------------------
-index.html       → The main HTML file with the XSS form
-style.css        → CSS file for page styling (optional)
-README.txt       → This file
+How to Prevent XSS (Mitigation Tips):
+-------------------------------------
+1. Escape HTML characters like <, >, ", and ' in user input before displaying it
+2. Use secure web frameworks (e.g., React, Django, Flask templates) that escape content by default
+3. Apply input sanitization using libraries like DOMPurify
+4. Set a strong Content Security Policy (CSP) in HTTP headers
+5. Avoid directly embedding raw user input into HTML, JavaScript, or URLs
 
 
-🎯 PURPOSE OF THIS DEMO
-------------------------
-This project is made to help students and beginners understand:
-
-- How an XSS attack works
-- Why input validation and escaping output are important
-- How to test and prevent these security risks
+Project File Structure:
+-----------------------
+index.html       - Main HTML file containing the XSS form
+style.css        - CSS file used for styling the page (optional)
+README.txt       - This documentation file
 
 
-📚 LEARN MORE
---------------
+Purpose of This Demo:
+---------------------
+This project is designed to help students and beginners understand:
+
+- How XSS attacks work in web environments
+- The importance of validating and escaping user inputs
+- How to recognize and prevent these types of vulnerabilities
+
+
+Learn More:
+-----------
 OWASP XSS Guide: https://owasp.org/www-community/attacks/xss  
-GitHub Pages Help: https://pages.github.com/  
+GitHub Pages Documentation: https://pages.github.com/
 
 
-Made for Learning Only 
+Disclaimer:
+-----------
+This demo is intended strictly for learning and demonstration purposes only. 
+Always follow secure coding practices when developing real applications.
