@@ -35,8 +35,8 @@ These threats can lead to serious consequences, especially on sites with login p
 
 ## How to Prevent XSS (Mitigation Tips)
 1. Escape HTML characters like `<`, `>`, `"`, and `'` in user input before displaying it  
-2. Use secure web frameworks (e.g., React, Django, Flask templates) that escape content by default  
-3. Apply input sanitization using libraries like [DOMPurify](https://github.com/cure53/DOMPurify)  
+2. Use secure web frameworks that escape content by default  
+3. Apply input sanitization  
 4. Set a strong Content Security Policy (CSP) in HTTP headers  
 5. Avoid directly embedding raw user input into HTML, JavaScript, or URLs  
 
@@ -49,7 +49,6 @@ README.txt       - This documentation file
 
 ## Purpose of This Demo
 This project is designed to help students and beginners understand:
-
 - How XSS attacks work in web environments  
 - The importance of validating and escaping user inputs  
 - How to recognize and prevent these types of vulnerabilities  
