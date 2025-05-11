@@ -1,26 +1,67 @@
-==============================
-📘 XSS DEMO WEBSITE
-==============================
+###
+XSS DEMO WEBSITE
+####
 
-Hey there! 👋
+Description:
+---------------
+This is a simple demo website using only HTML and CSS that shows how a Cross-Site Scripting (XSS) vulnerability works. It is meant for educational purposes to learn about web security.
 
-This is a simple demo project where I’ve intentionally created a **Cross-Site Scripting (XSS)** vulnerability to help you understand how XSS attacks work. This is a **learning tool**, so you can test it out and see exactly what happens when user input isn’t sanitized properly. Don't worry, this site is insecure by design, and is not meant for use in real-world applications.
+WARNING: This website is intentionally insecure. Do not use this code in real-world websites.
 
----
+LIVE DEMO LINK:
+--------------------
+https://my-flask-service-sj38.onrender.com
 
-### 🚀 Live Demo
+ WHAT IS XSS?
+----------------
+XSS stands for Cross-Site Scripting.
 
-Check out the demo in action:  
-🔗 **[Live Demo Here](https://your-username.github.io/your-repo-name/)**  
-(Just replace "your-username" and "your-repo-name" with your GitHub username and repository name)
+It is a type of attack where someone puts malicious code (usually JavaScript) into a website that is then shown to other users. This happens when a site does NOT clean or escape user input.
 
----
+Try this example:
+Type this into the input box on the page:
+<script>alert('This is an XSS attack!')</script>
 
-### ❓ What is XSS?
+If you see a popup message, it means the website is vulnerable to XSS.
 
-**Cross-Site Scripting (XSS)** is one of the most common web security vulnerabilities. It occurs when attackers inject malicious JavaScript code into websites. The malicious code is then executed in a user's browser when they visit the site.
+WHY IS XSS DANGEROUS?
+-------------------------
+- Steal passwords or session tokens
+- Redirect users to fake websites
+- Modify the content of the website
+- Show fake login forms
+- Spread worms through links
 
-In this demo, I’ve created a simple form that doesn’t clean or escape your input. So, when you type something like:
+These attacks can cause serious damage, especially on login pages or admin panels.
 
-```html
-<script>alert('XSS Attack!');</script>
+HOW TO PREVENT XSS (Mitigation Tips)
+----------------------------------------
+1. Escape HTML characters like < > " ' in user input before showing it
+2. Use frameworks (like React, Flask templates, etc.) that escape content by default
+3. Use input sanitization libraries like DOMPurify
+4. Add a Content Security Policy (CSP) header
+5. Never insert raw user input into HTML, JavaScript, or URLs
+
+PROJECT FILE STRUCTURE
+--------------------------
+index.html       → The main HTML file with the XSS form
+style.css        → CSS file for page styling (optional)
+README.txt       → This file
+
+
+🎯 PURPOSE OF THIS DEMO
+------------------------
+This project is made to help students and beginners understand:
+
+- How an XSS attack works
+- Why input validation and escaping output are important
+- How to test and prevent these security risks
+
+
+📚 LEARN MORE
+--------------
+OWASP XSS Guide: https://owasp.org/www-community/attacks/xss  
+GitHub Pages Help: https://pages.github.com/  
+
+
+Made for Learning Only 
