@@ -19,3 +19,13 @@ https://my-flask-service-sj38.onrender.com
 If you type this into a form:
 ```html
 <script>alert('XSS')</script>
+
+##An attacker can:##
+
+    Show fake login forms to steal passwords
+
+    Steal your session cookies and impersonate you
+
+    Redirect you to malicious websites
+
+    Modify the page content for phishing
