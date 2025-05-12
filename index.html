@@ -71,17 +71,18 @@
 
     <div class="input-box">
       <h3>Leave a Comment</h3>
-      <input type="text" id="inputBox" placeholder="Try typing <script>alert('XSS')</script>">
-      <button onclick="showComment()">Submit</button>
+      <input type="text" id="inputBox" placeholder="Type your comment here">
+      <button id="submitBtn">Submit</button>
       <div id="output"></div>
     </div>
   </div>
 
   <script>
-    function showComment() {
+    // Function to show the comment
+    document.getElementById('submitBtn').addEventListener('click', function() {
       const input = document.getElementById("inputBox").value;
-      document.getElementById("output").innerHTML = input; // Unsafe on purpose for demo
-    }
+      document.getElementById("output").innerHTML = input; // Display input text
+    });
   </script>
 </body>
 </html>
