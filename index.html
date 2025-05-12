@@ -2,65 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>XSS Demo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 40px;
-            color: #333;
-        }
-        h1 {
-            color: #d6336c;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            padding: 8px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            padding: 8px 16px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            margin-left: 10px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background: #0056b3;
-        }
-        .output {
-            margin-top: 30px;
-            padding: 15px;
-            background: white;
-            border-left: 5px solid #d6336c;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Demo - Simple Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="navbar">
+        <h1 class="logo">Simple Store</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-    <h1>XSS Attack Demo</h1>
-    <form method="GET" action="">
-        <label for="input">Enter your name (or a script):</label><br>
-        <input type="text" name="name" id="input">
-        <input type="submit" value="Submit">
-    </form>
+    <main class="content">
+        <section class="hero">
+            <h2>Welcome to Simple Store</h2>
+            <p>Buy your favorite items at affordable prices.</p>
+        </section>
 
-    <div class="output">
-        <h2>Output:</h2>
-        <p>
-            Hello, 
-            <script>
-                const params = new URLSearchParams(window.location.search);
-                document.write(params.get("name"));
-            </script>
-        </p>
-    </div>
+        <section class="products">
+            <div class="product-card">
+                <h3>Product 1</h3>
+                <p>$19.99</p>
+            </div>
+            <div class="product-card">
+                <h3>Product 2</h3>
+                <p>$29.99</p>
+            </div>
+            <div class="product-card">
+                <h3>Product 3</h3>
+                <p>$39.99</p>
+            </div>
+        </section>
 
+        <section class="form-section">
+            <h2>Leave a Review (XSS Demo)</h2>
+            <form method="get">
+                <label for="review">Your review:</label><br>
+                <input type="text" id="review" name="review" placeholder="Write your feedback here">
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="output">
+                <h3>Your Input:</h3>
+                <p>
+                    <!-- vulnerable echo (for demonstration only) -->
+                    <!-- In actual usage, this would be rendered dynamically by a server -->
+                    <!-- Replace this manually for now to test or hook it to Flask in future -->
+                    <!-- Simulated echo of user input goes here -->
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Simple Store. For learning purposes only.</p>
+    </footer>
 </body>
 </html>
