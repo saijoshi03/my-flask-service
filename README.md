@@ -7,7 +7,7 @@ It is meant for educational purposes to help learners understand basic web secur
 > **WARNING:** This website is intentionally insecure. Do not use this code in real-world websites or production environments.
 
 ## Live Demo Link
-[https://my-flask-service-sj38.onrender.com](https://my-flask-service-sj38.onrender.com)
+https://xss-demo-clu9.onrender.com
 
 ## What is XSS?
 XSS stands for **Cross-Site Scripting**.
